@@ -665,14 +665,19 @@ Rai Athletic Wear © 2026
 
 window.onload = function() {
 
-  const orderInput =
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
 
-    document
-      .getElementById(
-        'orderNo'
-      );
+  const orderNo =
+    params.get('orderNo');
 
-  if (orderInput.value) {
+  if (orderNo) {
+
+    document.getElementById(
+      'orderNo'
+    ).value = orderNo;
 
     trackOrder();
 
